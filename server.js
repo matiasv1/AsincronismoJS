@@ -24,7 +24,7 @@ async function getDataSensors(url, atributo){
 }
 
 app.get('/sensores_radon', function (req, res){
-    var url = "http://18.214.103.65:8080/api/plugins/telemetry/DEVICE/723d0580-452d-11ed-b4b1-1bcb8f5daa77/values/timeseries?keys=Fecha,Radon&startTs=1265046352083&endTs=1665029708303"
+    var url = "http:///api/plugins/telemetry/DEVICE/723d0580-452d-11ed-b4b1-1bcb8f5daa77/values/timeseries?keys=Fecha,Radon&startTs=1265046352083&endTs=1665029708303"
     getDataSensors(url,'Radon')
     .then(data => {
         res.send(data)})
@@ -36,7 +36,7 @@ app.get('/sensores_radon', function (req, res){
 
 app.get('/sensores_multiparametro', function(req,res){
     console.log("Peticion recibida")
-    var url = 'http://18.214.103.65:8080/api/plugins/telemetry/DEVICE/101d2fe0-454d-11ed-b4b1-1bcb8f5daa77/values/timeseries?keys=TIMESTAMP,WS,WD,Temp,RH,BP,Depth &startTs=1265046352083&endTs=1665043961492'
+    var url = 'http:///api/plugins/telemetry/DEVICE/101d2fe0-454d-11ed-b4b1-1bcb8f5daa77/values/timeseries?keys=TIMESTAMP,WS,WD,Temp,RH,BP,Depth &startTs=1265046352083&endTs=1665043961492'
     getDataSensors(url,'WD').then (data => res.send(data))
     
 })
