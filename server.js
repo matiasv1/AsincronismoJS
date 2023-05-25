@@ -4,7 +4,7 @@ const axios = require ('axios')
 const app = express()
 
 async function getConfig(){
-    const url = "http://18.214.103.65:8080/api/auth/login"
+    const url = "http://xxxxxxx/api/auth/login"
     const data = {"username":"", "password":""}
     const response = await axios.post(url,data)
     const token = response.data.token
